@@ -54,7 +54,7 @@ function Hero() {
             </p>
             <div className="h-6 max-sm:h-8 sm:h-10 md:h-12 lg:h-14 flex items-center justify-center">
               <img
-                src={serviceimg || '/placeholder.svg'}
+                src={serviceimg}
                 alt="Service Providers"
                 className="h-full w-auto object-contain"
               />
@@ -73,7 +73,7 @@ function Hero() {
             </p>
             <div className="h-6 max-sm:h-8 sm:h-10 md:h-12 lg:h-14 flex items-center justify-center">
               <img
-                src={appointmentimg || '/placeholder.svg'}
+                src={appointmentimg}
                 alt="Book Appointment"
                 className="h-full w-auto object-contain"
               />
@@ -92,7 +92,7 @@ function Hero() {
             </p>
             <div className="h-6 max-sm:h-8 sm:h-10 md:h-12 lg:h-14 flex items-center justify-center">
               <img
-                src={tipsimg || '/placeholder.svg'}
+                src={tipsimg}
                 alt="Quick Tips"
                 className="h-full w-auto object-contain"
               />
