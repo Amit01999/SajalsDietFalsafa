@@ -1,7 +1,7 @@
 import heroimg from '../assets/img/HomepageHeroimage.png';
-import serviceimg from '../assets/img/Our-Service-Providers.png';
-import appointmentimg from '../assets/img/Book-An-Appointment.png';
-import tipsimg from '../assets/img/Quick-Tips.png';
+import serviceimg from '../assets/img/Providers.png';
+import appointmentimg from '../assets/img/Appointment.png';
+import tipsimg from '../assets/img/Tips.png';
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 
