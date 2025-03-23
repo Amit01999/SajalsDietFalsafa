@@ -1,13 +1,11 @@
-import Hero from '../components/Hero';
-import ProgramsSection from '../components/ProgramsSection';
 import BlogSection from '../components/BlogSection';
 import TestimonialCarousel from '../components/TestimonialCarousel';
+import Hero from '../components/Hero';
 
 function HomePage() {
   return (
     <>
       <Hero />
-      <ProgramsSection />
       <BlogSection />
       <TestimonialCarousel />
     </>

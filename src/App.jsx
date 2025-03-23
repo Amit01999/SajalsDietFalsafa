@@ -14,16 +14,20 @@ import TeamPage from './pages/TeamPage';
 import ContactUsPage from './pages/ContactUsPage';
 import ProgramDisplayPage from './pages/ProgramDisplayPage';
 import Tips from './pages/Tips';
-
+import programslink from './Data/programslink';
+import NotFound from './components/NotFound';
 function App() {
+  const programTitles = programslink.map(program =>
+    program.link.replace('/', '')
+  ); // Extract valid program paths
+
   return (
     <>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/programs" element={<ProgramsPage />} />
-          <Route path="/appointment" element={<AppointmentPage />} />
-          <Route path="/appointment/:id" element={<ProgramDisplayPage />} />
+          <Route path="/appointment" element={<NotFound />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetailsPage />} />
           <Route path="/success-stories" element={<SuccessStoriesPage />} />
@@ -34,6 +38,14 @@ function App() {
           <Route path="/our-team" element={<TeamPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/tips" element={<Tips />} />
+          {/* Only apply dynamic route for program titles */}
+          {programTitles.map(title => (
+            <Route
+              key={title}
+              path={`/${title}`}
+              element={<ProgramDisplayPage />}
+            />
+          ))}
         </Routes>
       </Layout>
     </>

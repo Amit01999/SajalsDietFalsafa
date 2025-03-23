@@ -19,7 +19,7 @@ const JobDetailsPage = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-xl">
+    <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-24">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">{job.title}</h2>
       <p className="text-gray-600 text-lg mb-2">{job.institution}</p>
       <p className="text-[#808080] mb-2">

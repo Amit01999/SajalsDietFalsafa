@@ -27,7 +27,7 @@ import JobData from '../Data/JobData';
 
 const Jobs = () => {
   return (
-    <section className="bg-gray-100 py-12 px-4">
+    <section className="bg-gray-100 py-12 px-4 mt-20">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Jobs</h2>

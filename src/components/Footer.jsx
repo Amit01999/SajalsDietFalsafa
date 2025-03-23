@@ -5,8 +5,8 @@ import mail from '../assets/img/socialmedia/mail.png';
 import telegram from '../assets/img/socialmedia/telegram.png';
 const Footer = () => {
   return (
-    <footer className="bg-[#2A2B2A] text-white py-10 px-5">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+    <footer className="bg-[#2A2B2A] text-white pt-10 mt-auto ">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-5">
         {/* Contact Section */}
         <div>
           <h3 className="text-xl font-semibold mb-3">Contact</h3>
@@ -30,17 +30,46 @@ const Footer = () => {
             01992-051548
           </p>
           <div className="flex space-x-3 mt-3">
-            <span>
-              <img src={mail} />
+            <span
+              onClick={() =>
+                (window.location.href = 'mailto:asajal2019@gmail.com')
+              }
+            >
+              <img src={mail} className="hover:bg-green-500 cursor-pointer" />
             </span>
-            <span>
-              <img src={youtube} />
+            <span
+              onClick={() =>
+                window.open(
+                  'https://www.youtube.com/channel/UCb80zAHPVejLLNlwnlJRfqg',
+                  '_blank'
+                )
+              }
+            >
+              <img
+                src={youtube}
+                className="hover:bg-green-500 cursor-pointer"
+              />
             </span>
-            <span>
-              <img src={facebook} />
+            <span
+              onClick={() =>
+                window.open(
+                  'https://www.facebook.com/SajalsDietFalsafa/',
+                  '_blank'
+                )
+              }
+            >
+              <img
+                src={facebook}
+                className="hover:bg-green-500 cursor-pointer"
+              />
             </span>
-            <span>
-              <img src={telegram} className="h-7" />
+            <span
+              onClick={() => window.open('https://t.me/DietFalsafa', '_blank')}
+            >
+              <img
+                src={telegram}
+                className="h-7 hover:bg-green-500 cursor-pointer"
+              />
             </span>
           </div>
         </div>
@@ -109,14 +138,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="text-center mt-10 border-t border-gray-700 pt-5">
+      <div className="text-center bg-[#202020] mt-10 border-t border-gray-800 p-5 mb-0">
         <p>
-          &copy; 2025 sajalsdietfalsafa.com | Developed by{' '}
-          <a
-            href="https://my-website-ruddy-seven.vercel.app/"
-            className="text-green-400"
-          >
-            Amit Kumar Bishwas.
+          &copy; 2023 sajalsdietfalsafa.com | Developed by{' '}
+          <a href="https://it.ysibangla.com/" className="text-green-400">
+            YSI Bangla Ltd.
           </a>
         </p>
       </div>

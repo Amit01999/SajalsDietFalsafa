@@ -61,7 +61,7 @@ const teamMembers = [
 
 const TeamPage = () => {
   return (
-    <div className="container mx-auto py-10 px-10">
+    <div className="container mx-auto py-10 px-10 mt-20">
       <h2 className="text-center text-2xl font-semibold mb-6">Our Team</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 justify-items-center">
         {teamMembers.map((member, index) => (

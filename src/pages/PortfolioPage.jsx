@@ -5,7 +5,7 @@ import p3 from '../assets/img/Portfolio/p3.png';
 
 const Portfolio = () => {
   return (
-    <section className="bg-gray-100 py-12 px-4">
+    <section className="bg-gray-100 py-12 px-4 mt-20">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Portfolio</h2>

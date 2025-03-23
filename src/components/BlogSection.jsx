@@ -28,25 +28,33 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="p-12">
-      <h2 className="text-3xl font-bold mb-8">Blog</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <section className="p-12 relative max-sm:-mt-72 -mt-52">
+      <h2 className="text-2xl sm:text-3xl pb-5 border-b md:text-4xl font-bold my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
+        Blog
+      </h2>
+      <div className="px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center">
         {blogPosts.map((post, index) => (
-          <div key={index} className="flex flex-col">
+          <div
+            key={index}
+            className="flex flex-col justify-center items-center w-full sm:w-[300px]"
+          >
             <img
               src={post.image}
               alt={post.title}
-              className="w-full h-[300px] object-cover rounded-md"
+              className="w-full h-[350px] object-cover rounded-md"
             />
             <p className="text-gray-500 text-sm mt-2">{post.date}</p>
-            <h3 className="font-semibold mt-1">{post.title}</h3>
+            <h3 className="font-semibold mt-1 whitespace-break-spaces">
+              {post.title}
+            </h3>
           </div>
         ))}
-      </div>
-      <div className="mt-6">
-        <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
-          See All Posts
-        </button>
+
+        <div className="mt-6">
+          <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
+            See All Posts
+          </button>
+        </div>
       </div>
     </section>
   );
