@@ -107,10 +107,16 @@ const ContactUsPage = () => {
               </p>
             </div>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-600">
+              <a
+                href="https://www.facebook.com/SajalsDietFalsafa/"
+                className="text-gray-600"
+              >
                 <img src={facebook} className="w-8 h-8" alt="Facebook" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-black">
+              <a
+                href="https://www.youtube.com/channel/UCb80zAHPVejLLNlwnlJRfqg"
+                className="text-gray-600 hover:text-black"
+              >
                 <img src={youtube} className="w-8 h-8" alt="YouTube" />
               </a>
             </div>

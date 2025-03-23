@@ -46,28 +46,42 @@ const Portfolio = () => {
 
         {/* Additional Information */}
         <p className="text-gray-700 leading-relaxed mb-4">
-          সুইস অলাভজনক সংস্থা Terre Des Hommes এর টেকনিক্যাল সাপোর্ট (টিডিএইচ)
-          এবং বাংলাদেশের নেটওয়ার্কিং কমিউনিটি অটিস্টিক হিসেবে তিনি বিভিন্ন
-          দায়িত্ব পালন করেছেন এবং ফোকাল পার্সন হিসেবে এথিক্যাল কনসাল্টিং
-          সেক্টরের সাথে যুক্ত রয়েছেন।
+          সুইস অর্গানাইজেশান Terre Des Hommes এর টেকনিক্যাল এক্সপার্ট
+          (নিউট্রিশন) এবং ন্যাশনাল নিউট্রিশন কোঅর্ডিনেটর(কমিউনিটি আউটরিচ) হিসেবে
+          তিনি দায়িত্ব পালন করেছেন এবং ফোকাল পারসন হিসেবে একাধিকবার বাংলাদেশ
+          সরকারের সাথে যৌথভাবে নিউট্রিশন একশন উইকে টেরে ডেস হোমসের নেতৃত্ব
+          দিয়েছেন।
         </p>
-
+        <p className="text-gray-700">
+          তার বর্তমান কর্মস্থল বনানী স্পেশালাইজড হসপিটাল এবং BCR, বাংলাদেশ
+          সেন্টার ফর রিহ্যাবিলিটেশন।
+        </p>
+        <p className="text-gray-700">
+          মুহাম্মাদ সজল ২০২২ সালে অ্যামেরিকান সোসাইটি অফ নিউট্রিশনের সদস্যপদ লাভ
+          করেন। তিনি কাজ করেন ডায়াবেটিস, হার্ট ডিজিজ, স্ট্রোক, ফ্যাটি লিভার, হাই
+          রিস্ক প্রেগন্যান্সি, ন্যাচারাল ডেলিভারি, হরমোনাল ইমব্যালেন্স-পিসিওএস,
+          ইনফারটিলিটি, ওয়েট লস ও ওয়েট গেইন নিয়ে।
+        </p>
+        <p>তার সবচেয়ে প্রিয় বিষয় হচ্ছে এডভান্সড ভিটামিন এন্ড মিনারেল থেরাপি।</p>
         {/* Links */}
         <div className="mt-6">
-          <p className="text-gray-800 font-semibold">Explore More:</p>
+          <p className="text-gray-800">
+            ফেইসবুক পেইজ ছাড়াও আপনারা ফলো করতে পারেন আমাদের ইউটিউব চ্যানেল:
+          </p>
           <a
             href="https://youtube.com/channel/UCb80zAHPVejLLNlwnlJRfqg"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline block"
+            className="text-[#22C55E] hover:underline block"
           >
             YouTube Channel
           </a>
+          <p className="text-gray-800 ">টেলিগ্রাম চ্যানেল:</p>
           <a
             href="https://t.me/DietFalsafa"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline block mt-2"
+            className="text-[#22C55E] hover:underline block "
           >
             Telegram
           </a>

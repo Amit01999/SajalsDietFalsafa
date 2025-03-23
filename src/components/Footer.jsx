@@ -138,7 +138,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="text-center bg-[#202020] mt-10 border-t border-gray-800 p-5 mb-0">
+      <div className="text-center bg-[#202020] mt-10 border-t border-gray-800 p-5 ">
         <p>
           &copy; 2023 sajalsdietfalsafa.com | Developed by{' '}
           <a href="https://it.ysibangla.com/" className="text-green-400">

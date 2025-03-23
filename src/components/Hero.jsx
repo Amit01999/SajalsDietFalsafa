@@ -151,14 +151,14 @@ const Hero = () => {
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full max-sm:h-[80vh] sm:min-h-[70vh] md:min-h-[100vh] lg:min-h-[120vh] flex items-center justify-center overflow-hidden"
+        className="relative w-full max-sm:h-[90vh] sm:min-h-[70vh] md:min-h-[100vh] lg:min-h-[120vh] flex items-center justify-center overflow-hidden"
       >
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
             src={heroimg || '/placeholder.svg'}
             alt="Hero background"
-            className="-mt-1 w-full h-full max-sm:object-none max-sm:scale-100 sm:object-contain md:object-cover max-md:scale-110 md:translate-y-[10%]"
+            className="-mt-1 w-full h-full max-sm:object-none sm:object-contain md:object-cover max-md:scale-110 md:translate-y-[10%]"
             style={{
               willChange: 'transform',
               position: 'absolute',
@@ -244,15 +244,15 @@ const Hero = () => {
           willChange: 'transform', // Performance optimization
         }}
       >
-        <div className="p-4 sm:p-8 md:p-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
+        <div className="p-2 sm:p-8 md:p-12">
+          <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
             Programs
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {programsData.map((program, index) => (
               <Link to={program.link} key={index} className="block">
                 <div
-                  className={`p-4 sm:p-6 rounded-lg shadow-md ${program.color} flex flex-col items-center text-center h-full`}
+                  className={`p-10 sm:p-6 rounded-lg shadow-md ${program.color} flex flex-col items-center text-center h-full`}
                 >
                   <img
                     src={program.img || '/placeholder.svg'}

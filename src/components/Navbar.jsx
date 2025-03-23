@@ -50,9 +50,9 @@ function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.1)] ${
-        scrolled ? 'bg-white/95 shadow-md' : 'bg-white'
-      }`}
+      className={
+        'sticky bg-white top-0 z-50 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.1)] '
+      }
     >
       <div className="container mx-auto px-4 md:px-10 py-2 h-[92px] flex items-center justify-between relative">
         {/* Mobile menu button */}
@@ -90,9 +90,15 @@ function Navbar() {
         <div className="xl:hidden absolute top-[92px] left-0 right-0 bg-white shadow-md z-50 max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col p-4 space-y-3">
             {navLinks.map(link => (
-              <NavLink key={link.to} to={link.to} label={link.label} />
+              <div key={link.to} className="border-b border-gray-300 pb-2">
+                <NavLink
+                  className="block w-full py-2 text-gray-700 hover:text-[#22C55E] transition-colors"
+                  to={link.to}
+                  label={link.label}
+                />
+              </div>
             ))}
-            <div className="border-t pt-2">
+            <div>
               <button className="flex items-center text-gray-700 hover:text-[#22C55E] transition-colors">
                 <Search size={20} className="mr-2" /> Search
               </button>

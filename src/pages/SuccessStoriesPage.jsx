@@ -43,47 +43,56 @@ const SuccessStories = () => {
             ))}
           </div>
         </div>
-        <section className="flex items-center justify-center m-5 space-x-2 p-4">
-          <button
-            onClick={() => goToPage(currentPage - 1)}
-            className="px-4 py-2 bg-[#22C55E] text-white rounded disabled:opacity-50"
-            disabled={currentPage === 1}
-          >
-            &laquo; Previous
-          </button>
-
-          {[1, 2, 3, 4].map(page => (
+        <section className="flex items-center justify-center m-5 p-4 overflow-x-auto">
+          <div className="flex items-center space-x-1 md:space-x-2 flex-nowrap">
+            {/* Previous Button */}
             <button
-              key={page}
-              onClick={() => goToPage(page)}
-              className={`px-4 py-2 rounded ${
-                currentPage === page ? 'bg-gray-700 text-white' : 'bg-[#22C55E]'
+              onClick={() => goToPage(currentPage - 1)}
+              className="px-3 py-2 text-sm md:text-base bg-gray-300 text-gray-700 rounded disabled:opacity-50"
+              disabled={currentPage === 1}
+            >
+              &laquo;
+            </button>
+
+            {/* Page Numbers */}
+            {[1, 2].map(page => (
+              <button
+                key={page}
+                onClick={() => goToPage(page)}
+                className={`px-3 py-2 text-sm md:text-base rounded ${
+                  currentPage === page
+                    ? 'bg-gray-700 text-white' // Active Page
+                    : 'bg-[#22C55E] text-black' // Default
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            {/* Dots */}
+            <span className="px-3 py-2 text-sm md:text-base">...</span>
+
+            {/* Last Page */}
+            <button
+              onClick={() => goToPage(totalPages)}
+              className={`px-3 py-2 text-sm md:text-base rounded ${
+                currentPage === totalPages
+                  ? 'bg-gray-700 text-white'
+                  : 'bg-[#22C55E] text-black'
               }`}
             >
-              {page}
+              {totalPages}
             </button>
-          ))}
 
-          <span className="px-4 py-2">...</span>
-
-          <button
-            onClick={() => goToPage(totalPages)}
-            className={`px-4 py-2 rounded ${
-              currentPage === totalPages
-                ? 'bg-gray-700 text-white'
-                : 'bg-[#22C55E]'
-            }`}
-          >
-            {totalPages}
-          </button>
-
-          <button
-            onClick={() => goToPage(currentPage + 1)}
-            className="px-4 py-2 bg-[#16A34A] text-white rounded disabled:opacity-50"
-            disabled={currentPage === totalPages}
-          >
-            Next &raquo;
-          </button>
+            {/* Next Button */}
+            <button
+              onClick={() => goToPage(currentPage + 1)}
+              className="px-3 py-2 text-sm md:text-base bg-[#22C55E] text-black rounded disabled:opacity-50"
+              disabled={currentPage === totalPages}
+            >
+              &raquo;
+            </button>
+          </div>
         </section>
       </section>
     </>
