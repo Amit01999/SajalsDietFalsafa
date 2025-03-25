@@ -7,10 +7,17 @@ export default function BlogDetailsPage() {
   const [blog, setBlog] = useState(null);
 
   // Function to format Bangla text properly
+  // const formatBanglaText = text => {
+  //   return text.split('^').map(sentence => sentence.trim()); // Splitting based on `^` & removing spaces
+  // };
   const formatBanglaText = text => {
-    return text.split('^').map(sentence => sentence.trim()); // Splitting based on `^` & removing spaces
+    return text
+      .replace(/\^\^\s*/g, '\n\n') // Replace '^^' with two new lines
+      .replace(/\^\s*/g, '\n') // Replace single '^' with one new line
+      .split('\n') // Split by new lines
+      .map(sentence => sentence.trim()) // Trim spaces
+      .filter(sentence => sentence.length > 0); // Remove empty entries
   };
-
   useEffect(() => {
     const foundBlog = BlogData.find(b => b.id === Number(id));
     setBlog(foundBlog);
@@ -35,6 +42,23 @@ export default function BlogDetailsPage() {
               className="object-contain h-64 md:h-[90vh] mb-6 ml-10"
             />
           </div>
+          {blog.video && (
+            <div
+              className="relative max-w-7xl"
+              style={{ paddingTop: '56.25%' }}
+            >
+              {' '}
+              {/* 16:9 Aspect Ratio */}
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src={blog.video.replace('youtu.be/', 'www.youtube.com/embed/')}
+                title="YouTube Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
 
           <div className=" p-4 rounded px-10 mt-4">
             {formatBanglaText(blog.content).map((sentence, index) => (
