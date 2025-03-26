@@ -5,11 +5,6 @@ import { BlogData } from '../Data/BlogData';
 export default function BlogDetailsPage() {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
-
-  // Function to format Bangla text properly
-  // const formatBanglaText = text => {
-  //   return text.split('^').map(sentence => sentence.trim()); // Splitting based on `^` & removing spaces
-  // };
   const formatBanglaText = text => {
     return text
       .replace(/\^\^\s*/g, '\n\n') // Replace '^^' with two new lines
