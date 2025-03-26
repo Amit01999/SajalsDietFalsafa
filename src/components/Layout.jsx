@@ -5,7 +5,7 @@ import SmoothScrollWrapper from '../utils/SmoothScrollWrapper';
 
 function Layout({ children }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-fit">
       {/* Navbar stays fixed at the top */}
       <div
         style={{
