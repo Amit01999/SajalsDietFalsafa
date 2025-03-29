@@ -19,8 +19,7 @@ import NotFound from './components/NotFound';
 function App() {
   const programTitles = programslink.map(program =>
     program.link.replace('/', '')
-  ); // Extract valid program paths
-
+  );
   return (
     <>
       <Layout>

@@ -1,24 +1,62 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import programsData from '../Data/ProggramData';
+import { BlogData } from '../Data/BlogData';
+import CmagBaby from '../Data/CmagBaby';
+import BlogPage from './BlogPage';
+import ProgramStory from '../components/ProgramStory';
+import BodyReshaping from '../Data/BodyReshaping';
+import PregnancyPostpartum from '../Data/PregnancyPostpartum';
+import { SuccessData } from '../Data/SuccessData';
 
 const ProgramDisplayPage = () => {
   const location = useLocation();
 
   const [program, setProgram] = useState(null);
+  const [pblog, setblog] = useState(null);
 
   useEffect(() => {
     // Get the current path from location
     const currentPath = location.pathname;
+    console.log(currentPath);
 
     // Find program that matches the current path
     const foundProgram = programsData.find(p => p.link === currentPath);
+    if (currentPath === '/cmag-baby') {
+      setblog(CmagBaby);
+    }
+    if (currentPath === '/body-reshaping') {
+      setblog(BodyReshaping);
+    }
+    if (currentPath === '/bone-joint-health') {
+      const BoneJoint = BlogData.filter(item => item.category === 'bone-joint');
+      setblog(BoneJoint);
+    }
+    if (currentPath === '/pregnancy-postpartum') {
+      setblog(PregnancyPostpartum);
+    }
+    if (currentPath === '/heart-health') {
+      const HeartHealth = BlogData.filter(
+        item => item.category === 'heart-health'
+      );
+      setblog(HeartHealth);
+    }
+    if (currentPath === '/diabetes') {
+      const Diabetes = BlogData.filter(item => item.category === 'diabetes');
+      setblog(Diabetes);
+    }
+    if (currentPath === '/cancer') {
+      const cancer = BlogData.filter(item => item.id === 20 || item.id === 21);
+      setblog(cancer);
+    }
+    if (currentPath === '/pcos-female-hormonal-balance') {
+      const pcos = BlogData.filter(item => item.category === 'pcos');
+      const pcos2 = SuccessData.filter(item => item.category === 'pcos');
 
-    console.log('Found program:', foundProgram);
+      setblog([...pcos, ...pcos2]);
+    }
     setProgram(foundProgram || null);
   }, [location.pathname]);
-
-  // Show "Not Found" if program is missing
   if (!program) {
     return <p className="text-center text-red-500 mt-10">Program not found.</p>;
   }
@@ -106,6 +144,12 @@ const ProgramDisplayPage = () => {
           </button>
         </div>
       </div>
+
+      {pblog && (
+        <div className="mt-10">
+          <ProgramStory blog={pblog} />
+        </div>
+      )}
     </div>
   );
 };

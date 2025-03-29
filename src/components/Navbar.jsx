@@ -39,7 +39,7 @@ function Navbar() {
   const NavLink = ({ to, label }) => (
     <Link
       to={to}
-      className={`font-medium ${
+      className={`text-[18px] font-semibold ${
         location.pathname === to ? 'text-[#22C55E]' : 'text-gray-700'
       } hover:text-[#22C55E] transition-colors`}
       onClick={() => setIsMenuOpen(false)}

@@ -1,12 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { SuccessData } from '../Data/SuccessData';
 import { Link } from 'react-router-dom';
+
 const SuccessStories = () => {
-  const totalPages = 12;
   const [currentPage, setCurrentPage] = useState(1);
+  const storiesPerPage = 8;
+
+  // Calculate total pages based on the number of stories
+  const totalPages = Math.ceil(SuccessData.length / storiesPerPage);
+
+  // Paginate the stories
+  const paginatedStories = useMemo(() => {
+    const startIndex = (currentPage - 1) * storiesPerPage;
+    const endIndex = startIndex + storiesPerPage;
+    return SuccessData.slice(startIndex, endIndex);
+  }, [currentPage, SuccessData]);
+
   const goToPage = page => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
+  };
+
+  // Generate an array of page numbers to display
+  const getPageNumbers = () => {
+    const pageNumbers = [];
+    const maxPagesToShow = 5;
+
+    if (totalPages <= maxPagesToShow) {
+      // If total pages are less than or equal to max pages to show, show all
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      // Always show first page
+      pageNumbers.push(1);
+
+      // Determine range of pages to show around current page
+      let startPage = Math.max(2, currentPage - 1);
+      let endPage = Math.min(totalPages - 1, currentPage + 1);
+
+      // Add dots or intermediate pages
+      if (startPage > 2) {
+        pageNumbers.push('...');
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        pageNumbers.push(i);
+      }
+
+      if (endPage < totalPages - 1) {
+        pageNumbers.push('...');
+      }
+
+      // Always show last page
+      pageNumbers.push(totalPages);
+    }
+
+    return pageNumbers;
   };
 
   return (
@@ -16,17 +66,14 @@ const SuccessStories = () => {
       </div>
       <section className="bg-gray-100 py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {SuccessData.map(story => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {paginatedStories.map(story => (
               <Link
                 to={`/success-stories/${story.id}`}
                 key={story.id}
                 className="block"
               >
-                <div
-                  key={story.id}
-                  className="bg-white shadow-lg rounded-lg overflow-hidden min-h-full"
-                >
+                <div className="bg-white shadow-lg rounded-lg overflow-hidden min-h-full">
                   <img
                     src={story.image}
                     alt={story.title}
@@ -43,6 +90,8 @@ const SuccessStories = () => {
             ))}
           </div>
         </div>
+
+        {/* Pagination Section */}
         <section className="flex items-center justify-center m-5 p-4 overflow-x-auto">
           <div className="flex items-center space-x-1 md:space-x-2 flex-nowrap">
             {/* Previous Button */}
@@ -55,34 +104,31 @@ const SuccessStories = () => {
             </button>
 
             {/* Page Numbers */}
-            {[1, 2].map(page => (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={`px-3 py-2 text-sm md:text-base rounded ${
-                  currentPage === page
-                    ? 'bg-gray-700 text-white' // Active Page
-                    : 'bg-[#22C55E] text-black' // Default
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-
-            {/* Dots */}
-            <span className="px-3 py-2 text-sm md:text-base">...</span>
-
-            {/* Last Page */}
-            <button
-              onClick={() => goToPage(totalPages)}
-              className={`px-3 py-2 text-sm md:text-base rounded ${
-                currentPage === totalPages
-                  ? 'bg-gray-700 text-white'
-                  : 'bg-[#22C55E] text-black'
-              }`}
-            >
-              {totalPages}
-            </button>
+            {getPageNumbers().map((page, index) => {
+              if (page === '...') {
+                return (
+                  <span
+                    key={`dots-${index}`}
+                    className="px-3 py-2 text-sm md:text-base"
+                  >
+                    ...
+                  </span>
+                );
+              }
+              return (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`px-3 py-2 text-sm md:text-base rounded ${
+                    currentPage === page
+                      ? 'bg-gray-700 text-white' // Active Page
+                      : 'bg-[#22C55E] text-black' // Default
+                  }`}
+                >
+                  {page}
+                </button>
+              );
+            })}
 
             {/* Next Button */}
             <button

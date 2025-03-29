@@ -33,11 +33,11 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="p-12 max-sm:p-2 relative max-sm:-mt-80 -mt-52">
-      <h2 className="text-2xl sm:text-3xl pb-5 border-b md:text-4xl font-bold my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
+    <section className="p-12 pt-0 max-sm:p-2 relative -mt-96 max-sm:-mt-[800px]">
+      <h2 className="text-[48px] mb-5 font-semibold text-2xl sm:text-3xl pb-5 border-b md:text-4xl my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
         Blog
       </h2>
-      <div className="px-2">
+      <div className="px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-start gap-6">
           {blogPosts.map((post, index) => (
             <Link to={`blog/${post.id}`}>
@@ -59,13 +59,13 @@ const BlogSection = () => {
           ))}
 
           {/* See All Posts Button as a Grid Item */}
-          <div className="flex justify-center items-center"></div>
+          <div>
+            <button className=" px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
+              <Link to={'/blog'}>See All Posts</Link>
+            </button>
+          </div>
         </div>
       </div>
-
-      <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
-        <Link to={'/blog'}>See All Posts</Link>
-      </button>
     </section>
   );
 };

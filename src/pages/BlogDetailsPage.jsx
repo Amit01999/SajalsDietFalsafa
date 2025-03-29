@@ -24,12 +24,12 @@ export default function BlogDetailsPage() {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full py-10 pl-32 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] w-full py-10 pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] mt-24">
         {blog.title}
       </div>
 
       <section className="p-6 md:p-8  relative overflow-hidden">
-        <div className="relative pl-20">
+        <div className="relative pl-10">
           <div className="flex justify-start">
             <img
               src={blog.image}
@@ -57,7 +57,10 @@ export default function BlogDetailsPage() {
 
           <div className=" p-4 rounded px-10 mt-4">
             {formatBanglaText(blog.content).map((sentence, index) => (
-              <p key={index} className="mb-2">
+              <p
+                key={index}
+                className="mb-2 text-[#606060] text-[15px] font-medium"
+              >
                 {sentence}
               </p>
             ))}

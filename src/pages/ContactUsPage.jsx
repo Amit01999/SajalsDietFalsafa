@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import phone from '../assets/img/socialmedia/bi/phone.png';
-import facebook from '../assets/img/socialmedia/bi/facebook.png';
-import youtube from '../assets/img/socialmedia/bi/youtube.png';
+import facebook from '../assets/img/socialmedia/bi/f1.png';
+import youtube from '../assets/img/socialmedia/bi/y1.png';
+import telegram from '../assets/img/socialmedia/bi/t1.png';
 import mail from '../assets/img/socialmedia/bi/mail.png';
 
 const ContactUsPage = () => {
@@ -25,7 +26,7 @@ const ContactUsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white p-6 sm:p-8 rounded-lg shadow-lg">
         {/* Left: Contact Form */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">
+          <h3 className="text-2xl font-semibold mb-4 text-gray-800">
             Send Us A Message
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -67,12 +68,12 @@ const ContactUsPage = () => {
 
         {/* Right: Contact Details */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">
+          <h3 className="text-2xl font-semibold mb-4 text-gray-800">
             Contact Details
           </h3>
           <div className="text-gray-700 space-y-4">
             <div className="space-y-2">
-              <h4 className="text-[#808080] font-semibold">Chamber 1:</h4>
+              <h4 className=" font-semibold">Chamber 1:</h4>
               <p>Bangladesh Center for Rehabilitation</p>
               <p>234/C (1st Floor), Sonargaon Road, Katabon, Dhaka 1205</p>
             </div>
@@ -111,13 +112,19 @@ const ContactUsPage = () => {
                 href="https://www.facebook.com/SajalsDietFalsafa/"
                 className="text-gray-600"
               >
-                <img src={facebook} className="w-8 h-8" alt="Facebook" />
+                <img src={facebook} className=" h-7" alt="Facebook" />
               </a>
               <a
                 href="https://www.youtube.com/channel/UCb80zAHPVejLLNlwnlJRfqg"
                 className="text-gray-600 hover:text-black"
               >
-                <img src={youtube} className="w-8 h-8" alt="YouTube" />
+                <img src={youtube} className=" mt-1 h-6" alt="YouTube" />
+              </a>
+              <a
+                href="https://t.me/DietFalsafa"
+                className="text-gray-600 hover:text-black"
+              >
+                <img src={telegram} className=" h-7" alt="YouTube" />
               </a>
             </div>
           </div>

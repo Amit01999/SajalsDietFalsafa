@@ -2,34 +2,21 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SmoothScrollWrapper from '../utils/SmoothScrollWrapper';
-
 function Layout({ children }) {
   return (
-    <div className="flex flex-col min-h-fit">
-      {/* Navbar stays fixed at the top */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          zIndex: 1000,
-        }}
-      >
+    <div className="flex flex-col min-h-screen">
+      <header className="fixed top-0 left-0 w-full z-50">
         <Navbar />
-      </div>
+      </header>
 
-      {/* Add padding to account for fixed navbar */}
-      <div>
-        {/* Adjust this value to match your navbar height */}
-        {/* The smooth scrolling content */}
+      {/* ✅ Ensure SmoothScrollWrapper takes full height */}
+      <div className="flex-grow overflow-hidden">
         <SmoothScrollWrapper>
-          <main>{children}</main>
-          <Footer />
+          <main className="flex flex-col min-h-screen">{children}</main>
+          <Footer /> {/* ✅ Keep Footer inside SmoothScrollWrapper */}
         </SmoothScrollWrapper>
       </div>
     </div>
   );
 }
-
 export default Layout;

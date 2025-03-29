@@ -1,15 +1,15 @@
 import phone from '../assets/img/socialmedia/phone.png';
-import facebook from '../assets/img/socialmedia/facebook.png';
-import youtube from '../assets/img/socialmedia/youtube.png';
-import mail from '../assets/img/socialmedia/mail.png';
-import telegram from '../assets/img/socialmedia/telegram.png';
+import facebook from '../assets/img/socialmedia/facebook1.png';
+import youtube from '../assets/img/socialmedia/youtube1.png';
+import mail from '../assets/img/socialmedia/mail1.png';
+import telegram from '../assets/img/socialmedia/telegram1.png';
 const Footer = () => {
   return (
-    <footer className="bg-[#2A2B2A] text-white pt-10 mt-auto ">
+    <footer className="bg-[#2A2B2A] text-[#bdbdbd] pt-10 mt-auto footer mb-0">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-5">
         {/* Contact Section */}
         <div>
-          <h3 className="text-xl font-semibold mb-3">Contact</h3>
+          <h3 className="text-2xl text-white font-semibold mb-3">Contact</h3>
           <p>Bangladesh Center for Rehabilitation</p>
           <p>234/C (1st Floor), Sonargaon Road</p>
           <p>Katabon, Dhaka 1205</p>
@@ -22,20 +22,25 @@ const Footer = () => {
           <p>2nd floor, Road-127,</p>
           <p>76 Gulshan Avenue, Dhaka-1212</p>
           <br />
-          <h3 className="text-lg font-semibold mb-3">Connect With Us</h3>
+          <h3 className="text-2xl text-white font-semibold mb-3">
+            Connect With Us
+          </h3>
           <p className="flex items-center">
             <span className="mr-2">
               <img src={phone} />
             </span>{' '}
             01992-051548
           </p>
-          <div className="flex space-x-3 mt-3">
+          <div className="flex space-x-3 mt-5">
             <span
               onClick={() =>
                 (window.location.href = 'mailto:asajal2019@gmail.com')
               }
             >
-              <img src={mail} className="hover:bg-green-500 cursor-pointer" />
+              <img
+                src={mail}
+                className="hover:bg-green-500 cursor-pointer h-5"
+              />
             </span>
             <span
               onClick={() =>
@@ -47,7 +52,7 @@ const Footer = () => {
             >
               <img
                 src={youtube}
-                className="hover:bg-green-500 cursor-pointer"
+                className="hover:bg-green-500 cursor-pointer  h-5"
               />
             </span>
             <span
@@ -60,7 +65,7 @@ const Footer = () => {
             >
               <img
                 src={facebook}
-                className="hover:bg-green-500 cursor-pointer"
+                className="hover:bg-green-500 cursor-pointer  h-6"
               />
             </span>
             <span
@@ -68,7 +73,7 @@ const Footer = () => {
             >
               <img
                 src={telegram}
-                className="h-7 hover:bg-green-500 cursor-pointer"
+                className=" hover:bg-green-500 cursor-pointer  h-6"
               />
             </span>
           </div>
@@ -111,7 +116,9 @@ const Footer = () => {
 
         {/* Contact Form */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Send Us A Message</h3>
+          <h3 className="text-2xl text-white font-semibold mb-3">
+            Send Us A Message
+          </h3>
           <form>
             <input
               type="text"
@@ -138,7 +145,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="text-center bg-[#202020] mt-10 border-t border-gray-800 p-5 ">
+      <div className="text-center bg-[#202020] mt-10 border-t border-gray-800 p-5 text-white ">
         <p>
           &copy; 2023 sajalsdietfalsafa.com | Developed by{' '}
           <a href="https://it.ysibangla.com/" className="text-green-400">

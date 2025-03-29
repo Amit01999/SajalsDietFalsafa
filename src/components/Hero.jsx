@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import heroimg from '../assets/img/HomepageHeroimage.png';
 import serviceimg from '../assets/img/Providers.png';
 import appointmentimg from '../assets/img/Appointment.png';
@@ -16,6 +17,7 @@ import img9 from '../assets/img/4.-Diabetes.png';
 import img10 from '../assets/img/Cancer.png';
 import img11 from '../assets/img/2.-PCOS-Female-Hormonal-Balance.png';
 
+// Rest of the programsData remains the same as in the original code
 const programsData = [
   {
     title: 'CMag Baby',
@@ -95,7 +97,6 @@ const programsData = [
     id: 11,
   },
 ];
-
 const Hero = () => {
   const programsRef = useRef(null);
   const containerRef = useRef(null);
@@ -103,6 +104,11 @@ const Hero = () => {
   const serviceProvidersRef = useRef(null);
   const [scrollOffset, setScrollOffset] = useState(0);
   const [startScroll, setStartScroll] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  });
 
   useEffect(() => {
     // Function to handle smooth scroll updates
@@ -117,17 +123,13 @@ const Hero = () => {
         scrollY = window.pageYOffset || document.documentElement.scrollTop;
       }
 
-      // Check if programs section is in view
-      if (programsRef.current) {
-        const rect = programsRef.current.getBoundingClientRect();
-        // Start scroll effect when programs section is near viewport
-        if (rect.top <= window.innerHeight * 0.9) {
-          setStartScroll(true);
+      // Start scroll effect immediately when any scrolling occurs
+      if (scrollY > 0) {
+        setStartScroll(true);
 
-          // Calculate parallax effect (smooth movement)
-          const parallaxOffset = scrollY * 0.2;
-          setScrollOffset(parallaxOffset);
-        }
+        // Calculate parallax effect (smooth movement)
+        const parallaxOffset = scrollY * 0.2;
+        setScrollOffset(parallaxOffset);
       }
     };
 
@@ -147,14 +149,25 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="will-change-transform">
+    <motion.div
+      ref={containerRef}
+      className="will-change-transform"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Hero Section */}
       <div
         ref={heroRef}
         className="relative w-full max-sm:h-[90vh] sm:min-h-[70vh] md:min-h-[100vh] lg:min-h-[120vh] flex items-center justify-center overflow-hidden"
       >
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
           <img
             src={heroimg || '/placeholder.svg'}
             alt="Hero background"
@@ -167,26 +180,26 @@ const Hero = () => {
               width: '100%',
             }}
           />
-        </div>
+        </motion.div>
 
         {/* Service Providers Section (Moves with Scroll) */}
         <div
           ref={serviceProvidersRef}
-          className="absolute max-sm:mt-8 sm:mt-12 md:mt-16 lg:mt-32 left-1/2 top-1/2  max-sm:top-[420px] transform -translate-x-1/2 -translate-y-1/3  w-11/12 max-sm:w-8/12 sm:w-4/5 md:w-2/3 lg:w-1/2 bg-black bg-opacity-30 text-white text-center z-10 overflow-hidden"
+          className="absolute max-sm:mt-8 sm:mt-12 md:mt-16 lg:mt-32 left-1/2 top-1/2 max-sm:top-[420px] transform -translate-x-1/2 -translate-y-1/3 w-11/12 max-sm:w-8/12 sm:w-4/5 md:w-2/3 lg:w-1/2 bg-black bg-opacity-30 text-white text-center z-10 overflow-hidden"
           style={{
             transform: `translate(-50%, calc(-50% - ${
-              startScroll ? scrollOffset : 0
+              startScroll ? scrollOffset * 2 : 0
             }px))`,
             willChange: 'transform',
-            transition: 'transform 0.05s linear', // Add very small transition for smoother movement
+            transition: 'transform 0.3s ease-out', // Smoother transition
           }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-3">
             <div className="flex sm:flex-col gap-2 items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6 max-sm:border-b-1  border-b sm:border-b-0 sm:border-r border-white">
-              <p className="text-2xl sm:text-base md:text-lg lg:text-xl sm:font-semibold mb-1 sm:mb-2 max-sm:whitespace-pre-line ">
+              <p className="text-2xl sm:text-base md:text-lg lg:text-2xl sm:font-semibold mb-1 sm:mb-2 max-sm:whitespace-pre-line ">
                 <Link
                   to="/portfolio"
-                  className="sm:font-medium font-[27px]  hover:text-[#22C55E] hover:underline transition-all"
+                  className="sm:font-semibold  font-[27px]  hover:text-[#22C55E] hover:underline transition-all"
                 >
                   Our Service Providers
                 </Link>
@@ -198,10 +211,10 @@ const Hero = () => {
               />
             </div>
             <div className="flex sm:flex-col gap-2 items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6  max-sm:border-b-1   border-b  sm:border-b-0 sm:border-r border-white">
-              <p className="text-2xl sm:text-base md:text-lg lg:text-xl sm:font-semibold mb-1 sm:mb-2">
+              <p className="text-2xl sm:text-base md:text-lg lg:text-2xl sm:font-semibold mb-1 sm:mb-2">
                 <Link
                   to="/appointment"
-                  className="sm:font-medium font-[27px]  hover:text-[#22C55E] hover:underline transition-all"
+                  className="sm:font-semibold  font-[27px]  hover:text-[#22C55E] hover:underline transition-all"
                 >
                   Book An Appointment
                 </Link>
@@ -213,10 +226,10 @@ const Hero = () => {
               />
             </div>
             <div className="flex sm:flex-col items-center gap-2 justify-center p-2 sm:p-3 md:p-4 lg:p-6">
-              <p className="text-2xl sm:text-base   md:text-lg lg:text-xl sm:font-semibold mb-1 sm:mb-2 ml-8">
+              <p className="text-2xl sm:text-base md:text-lg lg:text-2xl sm:font-semibold mb-1 sm:mb-2 ml-8">
                 <Link
                   to="/tips"
-                  className="sm:font-medium font-[27px]  hover:text-[#22C55E] hover:underline transition-all"
+                  className="sm:font-semibold font-[27px]  hover:text-[#22C55E] hover:underline transition-all"
                 >
                   Quick Tips
                 </Link>
@@ -236,8 +249,8 @@ const Hero = () => {
         ref={programsRef}
         className="w-full bg-white pt-8 px-10"
         style={{
-          transform: `translateY(${startScroll ? -scrollOffset : 0}px)`,
-          transition: 'transform 0.05s linear', // Add small transition for smoother movement
+          transform: `translateY(${startScroll ? -scrollOffset * 2 : 0}px)`,
+          transition: 'transform 0.3s ease-out', // Smoother transition
           position: 'relative',
           zIndex: 20,
           marginTop: '-100px', // Negative margin to overlap with hero
@@ -245,24 +258,24 @@ const Hero = () => {
         }}
       >
         <div className="p-2 sm:p-8 md:p-12">
-          <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
+          <h2 className=" text-[48px] mb-5 font-semibold text-4xl sm:text-3xl md:text-5xl my-6 sm:my-8 md:my-12 mx-2 sm:mx-8 md:mx-8">
             Programs
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {programsData.map((program, index) => (
               <Link to={program.link} key={index} className="block">
                 <div
-                  className={`p-10 sm:p-6 rounded-lg shadow-md ${program.color} flex flex-col items-center text-center h-full`}
+                  className={`p-10 sm:p-6 rounded-lg shadow-md ${program.color} flex flex-col items-center text-center h-full transition-all duration-300 hover:scale-105 hover:shadow-lg`}
                 >
                   <img
                     src={program.img || '/placeholder.svg'}
                     alt={program.title}
                     className="h-16 sm:h-20 w-auto mb-2 sm:mb-4"
                   />
-                  <h3 className="text-base sm:text-lg font-semibold mb-2">
+                  <h3 className="text-base sm:text-xl mb-2 text-[20px] font-medium ">
                     {program.title}
                   </h3>
-                  <button className="px-3 sm:px-4 py-1 sm:py-2 border border-black rounded-full mt-2 sm:mt-4 hover:bg-black hover:text-white transition text-sm sm:text-base">
+                  <button className="px-3 sm:px-4 py-1 sm:py-2 border  border-black rounded-full mt-2 sm:mt-4 hover:bg-black hover:text-white transition text-sm sm:text-base">
                     Learn More
                   </button>
                 </div>
@@ -271,7 +284,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 
