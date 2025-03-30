@@ -65,18 +65,18 @@ const ProgramStory = props => {
     <>
       <section className=" py-2 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {paginatedStories.map(story => (
               <Link
                 to={`/success-stories/${story.id}`}
                 key={story.id}
                 className="block"
               >
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden min-h-full">
+                <div className=" group bg-white shadow-lg rounded-lg overflow-hidden min-h-full">
                   <img
                     src={story.image}
                     alt={story.title}
-                    className="w-full h-60 object-cover"
+                    className="w-full h-60 object-cover transition-transform duration-300 ease-in-out group-hover:translate-x-3"
                   />
                   <div className="p-4">
                     <p className="text-gray-800 font-semibold">{story.title}</p>

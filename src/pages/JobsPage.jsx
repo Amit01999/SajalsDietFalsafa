@@ -68,7 +68,7 @@ const Jobs = () => {
                 className="bg-white shadow-md p-5 rounded-lg flex justify-between items-center"
               >
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
                     {job.title}
                   </h3>
                   <p className="text-gray-700 font-light">{job.description}</p>

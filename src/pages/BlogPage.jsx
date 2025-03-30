@@ -88,11 +88,11 @@ const BlogPage = () => {
               className="block"
               onClick={() => sessionStorage.setItem('currentPage', currentPage)}
             >
-              <div className="bg-white min-h-full shadow-md rounded-md overflow-hidden">
+              <div className="group bg-white min-h-full shadow-md rounded-md overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-52 object-cover"
+                  className="w-full h-60 object-cover transition-transform duration-300 ease-in-out group-hover:translate-x-3"
                 />
                 <div className="p-4">
                   <h3 className="text-base font-semibold mb-2 text-[#545454]">
@@ -104,6 +104,7 @@ const BlogPage = () => {
             </Link>
           ))}
         </div>
+
         <section className="flex items-center justify-center m-5 p-4 overflow-x-hidden">
           <div className="flex items-center space-x-1 md:space-x-2 flex-nowrap">
             <button

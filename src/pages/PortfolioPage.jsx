@@ -32,7 +32,7 @@ const Portfolio = () => {
           এমপিএইচ সম্পন্ন করেন।
         </p>
         <p className="text-[#606060] text-[15px] font-medium leading-relaxed mb-4">
-          তিনি এবং বর্তমানে কাজ করছেন স্বায়ত্তশাসিত:
+          তিনি এখন পর্যন্ত কাজ করেছেন যথাক্রমে
         </p>
 
         {/* Bullet Points */}
@@ -52,11 +52,11 @@ const Portfolio = () => {
           সরকারের সাথে যৌথভাবে নিউট্রিশন একশন উইকে টেরে ডেস হোমসের নেতৃত্ব
           দিয়েছেন।
         </p>
-        <p className="text-[#606060] text-[15px] font-medium">
+        <p className="text-[#606060] text-[15px] font-medium mb-2">
           তার বর্তমান কর্মস্থল বনানী স্পেশালাইজড হসপিটাল এবং BCR, বাংলাদেশ
           সেন্টার ফর রিহ্যাবিলিটেশন।
         </p>
-        <p className="text-[#606060] text-[15px] font-medium">
+        <p className="text-[#606060] text-[15px] font-medium mb-2">
           মুহাম্মাদ সজল ২০২২ সালে অ্যামেরিকান সোসাইটি অফ নিউট্রিশনের সদস্যপদ লাভ
           করেন। তিনি কাজ করেন ডায়াবেটিস, হার্ট ডিজিজ, স্ট্রোক, ফ্যাটি লিভার, হাই
           রিস্ক প্রেগন্যান্সি, ন্যাচারাল ডেলিভারি, হরমোনাল ইমব্যালেন্স-পিসিওএস,
@@ -66,7 +66,7 @@ const Portfolio = () => {
           তার সবচেয়ে প্রিয় বিষয় হচ্ছে এডভান্সড ভিটামিন এন্ড মিনারেল থেরাপি।
         </p>
         {/* Links */}
-        <div className="mt-6">
+        <div className="mt-3">
           <p className="text-[#606060] text-[15px] font-medium">
             ফেইসবুক পেইজ ছাড়াও আপনারা ফলো করতে পারেন আমাদের ইউটিউব চ্যানেল:
           </p>
@@ -74,7 +74,7 @@ const Portfolio = () => {
             href="https://youtube.com/channel/UCb80zAHPVejLLNlwnlJRfqg"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#22C55E] hover:underline block"
+            className="text-[#22C55E] hover:underline block mb-2"
           >
             YouTube Channel
           </a>

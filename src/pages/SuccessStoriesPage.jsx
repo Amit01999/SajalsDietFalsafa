@@ -73,11 +73,11 @@ const SuccessStories = () => {
                 key={story.id}
                 className="block"
               >
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden min-h-full">
+                <div className="group bg-white shadow-lg rounded-lg overflow-hidden min-h-full">
                   <img
                     src={story.image}
                     alt={story.title}
-                    className="w-full h-60 object-cover"
+                    className="w-full h-60 object-cover transition-transform duration-300 ease-in-out group-hover:translate-x-3"
                   />
                   <div className="p-4">
                     <p className="text-gray-800 font-semibold">{story.title}</p>
