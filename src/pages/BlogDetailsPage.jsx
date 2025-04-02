@@ -1,6 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { BlogData } from '../Data/BlogData';
+import CmagBaby from '../Data/CmagBaby';
+import BodyReshaping from '../Data/BodyReshaping';
+import PregnancyPostpartum from '../Data/PregnancyPostpartum';
+import pcos from '../Data/Pcos';
 
 export default function BlogDetailsPage() {
   const { id } = useParams();
@@ -13,9 +17,31 @@ export default function BlogDetailsPage() {
       .map(sentence => sentence.trim()) // Trim spaces
       .filter(sentence => sentence.length > 0); // Remove empty entries
   };
+
+  // useEffect(() => {
+  //   const foundBlog = BlogData.find(b => b.id === Number(id));
+  //   setBlog(foundBlog);
+  // }, [id]);
+
   useEffect(() => {
-    const foundBlog = BlogData.find(b => b.id === Number(id));
-    setBlog(foundBlog);
+    let foundBlog = BlogData.find(b => b.id === Number(id));
+
+    if (!foundBlog) {
+      foundBlog = CmagBaby.find(b => b.id === id);
+    }
+    if (!foundBlog) {
+      foundBlog = BodyReshaping.find(b => b.id === id);
+    }
+    if (!foundBlog) {
+      foundBlog = PregnancyPostpartum.find(b => b.id === id);
+    }
+    if (!foundBlog) {
+      foundBlog = pcos.find(b => b.id === id);
+    }
+
+    if (foundBlog) {
+      setBlog(foundBlog);
+    }
   }, [id]);
 
   if (!blog) {

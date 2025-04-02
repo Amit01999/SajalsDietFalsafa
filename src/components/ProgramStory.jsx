@@ -2,9 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 const ProgramStory = props => {
-  console.log(props);
   const pblog = props.blog;
-  console.log(pblog);
   const [currentPage, setCurrentPage] = useState(1);
   const storiesPerPage = 16;
 
@@ -67,11 +65,7 @@ const ProgramStory = props => {
         <div className="max-w-6xl mx-auto">
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {paginatedStories.map(story => (
-              <Link
-                to={`/success-stories/${story.id}`}
-                key={story.id}
-                className="block"
-              >
+              <Link to={`/blog/${story.id}`} key={story.id} className="block">
                 <div className=" group bg-white shadow-lg rounded-lg overflow-hidden min-h-full">
                   <img
                     src={story.image}

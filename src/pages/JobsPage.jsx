@@ -1,30 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import JobData from '../Data/JobData';
-
-// const jobs = [
-//   {
-//     title: 'ফ্রেশার থেকে এক্সপার্ট',
-//     description: 'একজন ফ্রেশার থেকে কিভাবে বিটিশ বিশেষজ্ঞ হওয়া সম্ভব',
-//   },
-//   {
-//     title: 'কিচেনইনভেস্টর (কিউই)',
-//     description: 'একজন কিউই ইনভেস্টর হিসেবে কিচেন ইনভেস্টর প্রোগ্রাম',
-//   },
-//   {
-//     title: 'ডায়েটিশিয়ান',
-//     description: 'ডায়েটিশিয়ান হিসেবে কিভাবে আপনার ক্যারিয়ার গড়বেন',
-//   },
-//   {
-//     title: 'নিউট্রিশনিস্ট',
-//     description: 'নিউট্রিশনিস্ট হিসেবে ন্যাশনাল নিউট্রিশনিস্ট প্রোগ্রাম',
-//   },
-//   {
-//     title: 'ক্লিনিকাল নিউট্রিশনিস্ট',
-//     description: 'ক্লিনিকাল নিউট্রিশনিস্ট হিসেবে নিউট্রিশনিস্ট প্রোগ্রাম',
-//   },
-// ];
-
 const Jobs = () => {
   return (
     <section className="bg-gray-100 py-12 px-4 mt-20">
@@ -61,24 +37,25 @@ const Jobs = () => {
 
         {/* Job Listings */}
         <div className="space-y-4">
-          {JobData.map((job, index) => (
-            <Link to={`/career/${job.id}`} key={job.id} className="block">
-              <div
-                key={index}
-                className="bg-white shadow-md p-5 rounded-lg flex justify-between items-center"
-              >
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                    {job.title}
-                  </h3>
-                  <p className="text-gray-700 font-light">{job.description}</p>
+          <div className="container mx-auto px-4 space-y-6">
+            {JobData.map(job => (
+              <Link to={`/career/${job.id}`} key={job.id} className="block">
+                <div className="bg-white shadow-md p-5 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
+                  <div className="w-full sm:w-3/4">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">
+                      {job.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm md:text-base font-light">
+                      {job.description}
+                    </p>
+                  </div>
+                  <button className="bg-black text-white px-4 md:px-6 py-3 rounded-lg hover:bg-gray-800 transition text-sm sm:text-base md:text-lg w-full sm:w-auto">
+                    More Details →
+                  </button>
                 </div>
-                <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
-                  More Details →
-                </button>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

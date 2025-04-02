@@ -171,7 +171,7 @@ const Hero = () => {
           <img
             src={heroimg || '/placeholder.svg'}
             alt="Hero background"
-            className="-mt-1 w-full h-full max-sm:object-none sm:object-contain md:object-cover max-md:scale-110 md:translate-y-[10%]"
+            className=" max-sm:-mt-2 -mt-1 w-full h-full max-sm:object-none sm:object-contain md:object-cover max-md:scale-110 md:translate-y-[10%]"
             style={{
               willChange: 'transform',
               position: 'absolute',
@@ -185,7 +185,7 @@ const Hero = () => {
         {/* Service Providers Section (Moves with Scroll) */}
         <div
           ref={serviceProvidersRef}
-          className="absolute max-sm:mt-8 sm:mt-12 md:mt-16 lg:mt-32 left-1/2 top-1/2 max-sm:top-[420px] transform -translate-x-1/2 -translate-y-1/3 w-11/12 max-sm:w-8/12 sm:w-4/5 md:w-2/3 lg:w-1/2 bg-black bg-opacity-30 text-white text-center z-10 overflow-hidden"
+          className="absolute max-sm:mt-16 sm:mt-12 md:mt-16 lg:mt-32 left-1/2 top-1/2 max-sm:top-[420px] transform -translate-x-1/2 -translate-y-1/3 w-11/12 max-sm:w-8/12 sm:w-4/5 md:w-2/3 lg:w-1/2 bg-black bg-opacity-30 text-white text-center z-10 overflow-hidden"
           style={{
             transform: `translate(-50%, calc(-50% - ${
               startScroll ? scrollOffset * 2 : 0

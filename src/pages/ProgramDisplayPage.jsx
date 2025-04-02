@@ -8,6 +8,7 @@ import ProgramStory from '../components/ProgramStory';
 import BodyReshaping from '../Data/BodyReshaping';
 import PregnancyPostpartum from '../Data/PregnancyPostpartum';
 import { SuccessData } from '../Data/SuccessData';
+import pcos from '../Data/Pcos';
 
 const ProgramDisplayPage = () => {
   const location = useLocation();
@@ -18,7 +19,6 @@ const ProgramDisplayPage = () => {
   useEffect(() => {
     // Get the current path from location
     const currentPath = location.pathname;
-    console.log(currentPath);
 
     // Find program that matches the current path
     const foundProgram = programsData.find(p => p.link === currentPath);
@@ -50,10 +50,10 @@ const ProgramDisplayPage = () => {
       setblog(cancer);
     }
     if (currentPath === '/pcos-female-hormonal-balance') {
-      const pcos = BlogData.filter(item => item.category === 'pcos');
-      const pcos2 = SuccessData.filter(item => item.category === 'pcos');
+      const pcos1 = BlogData.filter(item => item.category === 'pcos');
+      const pcos2 = pcos;
 
-      setblog([...pcos, ...pcos2]);
+      setblog([...pcos1, ...pcos2]);
     }
     setProgram(foundProgram || null);
   }, [location.pathname]);

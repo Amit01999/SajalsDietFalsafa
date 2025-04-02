@@ -14,7 +14,6 @@ const ContactUsPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('Form Submitted:', form);
     alert('Message Sent!');
   };
 

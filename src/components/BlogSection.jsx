@@ -33,7 +33,7 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="p-12 pt-0 max-sm:p-2 relative -mt-96 max-sm:-mt-[800px]">
+    <section className="p-12 bg-white z-10 pt-0 max-sm:p-2 relative -mt-96 max-sm:-mt-[800px]">
       <h2 className="text-[48px] mb-5 font-semibold text-2xl sm:text-3xl pb-5 border-b md:text-4xl my-6 sm:my-8 md:my-12 mx-4 sm:mx-8 md:mx-12">
         Blog
       </h2>
