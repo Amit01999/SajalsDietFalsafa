@@ -151,7 +151,7 @@ const Hero = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="will-change-transform"
+      className="will-change-transform "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -159,7 +159,7 @@ const Hero = () => {
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full max-sm:h-[90vh] sm:min-h-[70vh] md:min-h-[100vh] lg:min-h-[120vh] flex items-center justify-center overflow-hidden"
+        className="relative w-full max-sm:h-[90vh] sm:min-h-[100vh] lg:min-h-[120vh] flex items-center justify-center overflow-hidden pt-24"
       >
         {/* Background Image */}
         <motion.div
@@ -171,21 +171,14 @@ const Hero = () => {
           <img
             src={heroimg || '/placeholder.svg'}
             alt="Hero background"
-            className=" max-sm:-mt-2 -mt-1 w-full h-full max-sm:object-none sm:object-contain md:object-cover max-md:scale-110 md:translate-y-[10%]"
-            style={{
-              willChange: 'transform',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-            }}
+            className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </motion.div>
 
         {/* Service Providers Section (Moves with Scroll) */}
         <div
           ref={serviceProvidersRef}
-          className="absolute max-sm:mt-16 sm:mt-12 md:mt-16 lg:mt-32 left-1/2 top-1/2 max-sm:top-[420px] transform -translate-x-1/2 -translate-y-1/3 w-11/12 max-sm:w-8/12 sm:w-4/5 md:w-2/3 lg:w-1/2 bg-black bg-opacity-30 text-white text-center z-10 overflow-hidden"
+          className="absolute max-sm:mt-10 sm:mt-7 md:mt-8 lg:mt-12 left-1/2 top-1/2 max-sm:top-[420px] transform -translate-x-1/2 -translate-y-1/3 w-11/12 max-sm:w-8/12 sm:w-4/5 md:w-2/3 lg:w-1/2 bg-black bg-opacity-30 text-white text-center z-10 overflow-hidden"
           style={{
             transform: `translate(-50%, calc(-50% - ${
               startScroll ? scrollOffset * 2 : 0

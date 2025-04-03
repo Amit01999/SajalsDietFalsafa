@@ -63,7 +63,7 @@ const ProgramDisplayPage = () => {
 
   return (
     <div>
-      <div className="bg-[#FAFAFA] py-10 pl-32 text-[#545454] font-medium text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] py-10 p-6 xl:pl-32 text-[#545454] font-medium text-xl relative border-b border-[#E5E5E5]">
         {program.title}
       </div>
 

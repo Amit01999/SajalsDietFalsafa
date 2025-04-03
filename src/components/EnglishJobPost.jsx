@@ -3,7 +3,7 @@ import React from 'react';
 export default function EnglishJobPost({ job }) {
   return (
     <div>
-      <div className="bg-[#FAFAFA] w-full py-10 md:pl-28 pl-6 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] w-full py-10 md:pl-28 pl-6 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] ">
         {job.title}
       </div>
       <div className="max-w-6xl md:ml-24 p-6 bg-white mt-3">

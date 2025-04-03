@@ -50,12 +50,12 @@ export default function BlogDetailsPage() {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full py-10 pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] w-full py-10 p-7 md:pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] ">
         {blog.title}
       </div>
 
-      <section className="p-6 md:p-8  relative overflow-hidden">
-        <div className="relative pl-10">
+      <section className="p-2 md:p-8 relative overflow-hidden">
+        <div className="relative ">
           <div className="flex justify-start">
             <img
               src={blog.image}

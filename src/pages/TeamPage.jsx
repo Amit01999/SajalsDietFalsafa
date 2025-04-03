@@ -77,7 +77,7 @@ const teamMembers = [
 const TeamPage = () => {
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full py-10 pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] w-full py-10 p-8 md:pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5]">
         Our Team
       </div>
       <div className="container mx-auto py-10 px-20 mt-7">

@@ -26,12 +26,12 @@ export default function storyDetailsPage() {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full py-10 pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] w-full p-7 py-10 md:pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5]">
         {story.title}
       </div>
 
-      <section className="p-6 md:p-8  relative overflow-hidden">
-        <div className="relative pl-10">
+      <section className="p-2 md:p-8  relative overflow-hidden">
+        <div className="relative">
           <div className="flex justify-start">
             <img
               src={story.image}

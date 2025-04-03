@@ -18,7 +18,7 @@ const ContactUsPage = () => {
   };
 
   return (
-    <div className="container mx-auto py-12 px-4 sm:px-6 md:px-12 lg:px-20 mt-20">
+    <div className="container mx-auto py-12 px-4 sm:px-6 md:px-12 lg:px-20">
       <h2 className="text-center text-3xl font-semibold mb-8 text-gray-800">
         Contact Us
       </h2>

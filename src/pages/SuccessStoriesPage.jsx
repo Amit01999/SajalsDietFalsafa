@@ -61,7 +61,7 @@ const SuccessStories = () => {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full py-10 pl-32 text-[#545454] font-medium text-xl relative border-b border-[#E5E5E5] mt-24">
+      <div className="bg-[#FAFAFA] w-full py-10 pl-6 lg:pl-32 text-[#545454] font-medium text-xl relative border-b border-[#E5E5E5] ">
         Success Stories
       </div>
       <section className="bg-gray-100 py-12 px-4">

@@ -9,11 +9,13 @@ function Layout({ children }) {
         <Navbar />
       </header>
 
-      {/* ✅ Ensure SmoothScrollWrapper takes full height */}
+      {/* Ensure SmoothScrollWrapper takes full height */}
       <div className="flex-grow overflow-hidden">
         <SmoothScrollWrapper>
-          <main className="flex flex-col min-h-screen">{children}</main>
-          <Footer /> {/* ✅ Keep Footer inside SmoothScrollWrapper */}
+          <main className="flex flex-col min-h-screen pt-[90px]">
+            {children}
+          </main>
+          <Footer /> {/* Keep Footer inside SmoothScrollWrapper */}
         </SmoothScrollWrapper>
       </div>
     </div>
