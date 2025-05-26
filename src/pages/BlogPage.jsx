@@ -80,7 +80,7 @@ const BlogPage = () => {
             </button>
           ))}
         </div>
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
           {currentPosts.map(post => (
             <Link
               to={`/blog/${post.id}`}

@@ -18,9 +18,9 @@ const Footer = () => {
           <p>Rupsha Tower, House 72, Level-03, Road No. 11,</p>
           <p>Dhaka-1213</p>
           <br />
-          <p>Mayfair Wellness Clinic Molly Capita Centre,</p>
-          <p>2nd floor, Road-127,</p>
-          <p>76 Gulshan Avenue, Dhaka-1212</p>
+          <p>Ascent Health</p>
+          <p>House 3D, Road 2A,</p>
+          <p> Block-J, Baridhara-1212</p>
           <br />
           <h3 className="text-2xl text-white font-semibold mb-3">
             Connect With Us
@@ -39,7 +39,7 @@ const Footer = () => {
             >
               <img
                 src={mail}
-                className="hover:bg-green-500 cursor-pointer h-5"
+                className="cursor-pointer h-5 hover:scale-110 transition duration-300"
               />
             </span>
             <span
@@ -52,7 +52,7 @@ const Footer = () => {
             >
               <img
                 src={youtube}
-                className="hover:bg-green-500 cursor-pointer  h-5"
+                className="hover:scale-110 transition duration-300 cursor-pointer  h-5"
               />
             </span>
             <span
@@ -65,7 +65,7 @@ const Footer = () => {
             >
               <img
                 src={facebook}
-                className="hover:bg-green-500 cursor-pointer  h-6"
+                className="hover:scale-110 transition duration-300 cursor-pointer  h-6"
               />
             </span>
             <span
@@ -73,7 +73,7 @@ const Footer = () => {
             >
               <img
                 src={telegram}
-                className=" hover:bg-green-500 cursor-pointer  h-6"
+                className=" hover:scale-110 transition duration-300 cursor-pointer  h-6"
               />
             </span>
           </div>

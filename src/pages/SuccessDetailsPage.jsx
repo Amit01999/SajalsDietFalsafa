@@ -26,17 +26,17 @@ export default function storyDetailsPage() {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full p-7 py-10 md:pl-28 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5]">
+      <div className="bg-[#FAFAFA] w-full py-10 p-7 md:pl-24 text-[#545454] font-bold text-xl relative border-b border-[#E5E5E5]">
         {story.title}
       </div>
 
-      <section className="p-2 md:p-8  relative overflow-hidden">
+      <section className="md:p-8 relative overflow-hidden md:ml-7">
         <div className="relative">
           <div className="flex justify-start">
             <img
               src={story.image}
               alt={story.title}
-              className="object-contain h-64 md:h-[90vh] mb-6 ml-10"
+              className="object-contain h-auto p-5  mb-6 md:ml-7"
             />
           </div>
           {story.video && (
@@ -57,11 +57,11 @@ export default function storyDetailsPage() {
             </div>
           )}
 
-          <div className=" p-4 rounded px-10 mt-4">
+          <div className=" p-5 rounded md:px-10 mt-4">
             {formatBanglaText(story.content).map((sentence, index) => (
               <p
                 key={index}
-                className="mb-2 text-[#606060] text-[15px] font-medium"
+                className="text-[#707070] text-[15px] font-medium subpixel-antialiased leading-[1.8]"
               >
                 {sentence}
               </p>
