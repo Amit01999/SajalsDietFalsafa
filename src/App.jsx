@@ -12,6 +12,8 @@ import ProgramDisplayPage from './pages/ProgramDisplayPage';
 import Tips from './pages/Tips';
 import programslink from './Data/programslink';
 import NotFound from './components/NotFound';
+import NutritionOfficerJob from './pages/NutritionOfficerJob';
+import JuniorNutritionOfficerJob from './pages/JuniorNutritionOfficerJob';
 
 // Lazy-loaded components
 const BlogPage = lazy(() => import('./pages/BlogPage'));
@@ -67,7 +69,15 @@ function App() {
 
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/career" element={<JobsPage />} />
-        <Route path="/career/:id" element={<JobDetailsPage />} />
+        <Route
+          path="/career/নিউট্রিশন-অফিসার"
+          element={<NutritionOfficerJob />}
+        />
+        <Route
+          path="/career/জুনিয়র-নিউট্রিশন-অফিসার"
+          element={<JuniorNutritionOfficerJob />}
+        />
+        {/* <Route path="/career/:id" element={<JobDetailsPage />} /> */}
         <Route path="/our-team" element={<TeamPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/tips" element={<Tips />} />

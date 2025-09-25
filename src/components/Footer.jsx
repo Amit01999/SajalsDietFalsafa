@@ -148,8 +148,8 @@ const Footer = () => {
       <div className="text-center bg-[#202020] mt-10 border-t border-gray-800 p-5 text-white ">
         <p>
           &copy; 2023 sajalsdietfalsafa.com | Developed by{' '}
-          <a href="https://it.ysibangla.com/" className="text-green-400">
-            YSI Bangla Ltd.
+          <a href="https://bepro.it.com/" className="text-green-400">
+            BePro IT.
           </a>
         </p>
       </div>

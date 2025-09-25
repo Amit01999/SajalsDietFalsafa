@@ -36,7 +36,7 @@ const Jobs = () => {
         </p>
 
         {/* Job Listings */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <div className="container mx-auto px-4 space-y-6">
             {JobData.map(job => (
               <Link to={`/career/${job.id}`} key={job.id} className="block">
@@ -55,6 +55,39 @@ const Jobs = () => {
                 </div>
               </Link>
             ))}
+          </div>
+        </div> */}
+        {/* New Job Listings */}
+        <div className="space-y-4">
+          <div className="container mx-auto px-4 space-y-6">
+            <div className="bg-white shadow-md p-5 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
+              <div className="w-full sm:w-3/4">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">
+                  নিউট্রিশন অফিসার
+                </h3>
+              </div>
+              <Link
+                to={'/career/নিউট্রিশন-অফিসার'}
+                className="bg-black text-white px-4 md:px-6 py-3 rounded-lg hover:bg-gray-800 transition text-sm sm:text-base md:text-lg w-full sm:w-auto"
+              >
+                More Details →
+              </Link>
+            </div>
+          </div>
+          <div className="container mx-auto px-4 space-y-6">
+            <div className="bg-white shadow-md p-5 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
+              <div className="w-full sm:w-3/4">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">
+                  জুনিয়র নিউট্রিশন অফিসার
+                </h3>
+              </div>
+              <Link
+                to={'/career/জুনিয়র-নিউট্রিশন-অফিসার'}
+                className="bg-black text-white px-4 md:px-6 py-3 rounded-lg hover:bg-gray-800 transition text-sm sm:text-base md:text-lg w-full sm:w-auto"
+              >
+                More Details →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
